@@ -4,7 +4,9 @@ public enum Categoria{
 }
 
 public class Atuendo{
-    private List<Prenda> prendasValidas;
+    private Prenda parteSuperior;
+    private Prenda parteInferior;
+    private Prenda calzado;
 }
 
 public enum Material {

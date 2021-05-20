@@ -20,7 +20,7 @@ public class Guardarropas{
         }
     }
 
-    public Atuendo generarSugerencia {
+    public Atuendo generarSugerencia() {
         return new Atuendo (prendasSuperiores.atRandom(),prendasInferiores.atRandom(), calzados.atRandom());
     }
 

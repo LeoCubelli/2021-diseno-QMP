@@ -30,7 +30,7 @@ public class Temperatura {
 
 }
 
-public class servicioClimatico {
+public class ServicioClimatico {
 
 	private static final AccuWeatherAPI apiClima = new AccuWeatherAPI();
 
