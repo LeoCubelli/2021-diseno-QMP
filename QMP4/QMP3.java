@@ -31,7 +31,7 @@ public class Guardarropas{
       return atuendoPorTemperatura(temperatura);
     }
 
-    public atuendosAdecuadosPorTemperatura(Temperatura temperatura) {
+    public atuendoPorTemperatura(Temperatura temperatura) {
         Prenda prendaSuperior = prendasSuperiores.stream().filter(prendaSuperior -> prendaSuperior.getTemperatura().esValida(temperatura)).atRandom();
         Prenda prendasInferior = prendasInferiores.stream().filter(prendaInferior -> prendaInferior.getTemperatura().esValida(temperatura)).atRandom();
         Prenda calzado = calzados.stream().filter(calzado -> calzado.getTemperatura().esValida(temperatura)).atRandom();
