@@ -3,14 +3,15 @@ public enum Trama {
 }
 
 public class Borrador {
-  private TipoDePrenda tipo;
+  private TipoDePrenda tipoPrenda;
   private Material material;
   private Color colorPrincipal;
   private Color colorSecundario = null; //Es null por default 
   private Trama trama;
+  private Temperatura temperatura;
 
-  public void especificarTipoDePrenda(TipoDePrenda tipo) {
-    this.tipo = requireNonNull(color, "Tipo de prenda no puede ser nulo");
+  public void especificarTipoDePrenda(TipoDePrenda tipoPrenda) {
+    this.tipoPrenda = requireNonNull(tipoPrenda, "Tipo de prenda no puede ser nulo");
   }
 
   public void especificarMaterial(Material material) {
@@ -34,8 +35,12 @@ public class Borrador {
   	}
   }
 
+  public void especificarTemperatura(Temperatura temperatura) {
+    this.temperatura = requireNonNull(temperatura, "Tipo de prenda no puede ser nulo");
+  }
+
   public Prenda crearPrenda() {
-    return new Prenda(tipo, material, colorPrincipal, colorSecundario, trama);
+    return new Prenda(tipoPrenda, material, colorPrincipal, colorSecundario, trama, temperatura);
   }
 
 }

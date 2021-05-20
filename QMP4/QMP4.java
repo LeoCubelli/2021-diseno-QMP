@@ -20,21 +20,6 @@ public final class AccuWeatherAPI {
 }
 
 
-public class Ropero {
-    List<Atuendo> atuendos;
-
-    public List<Atuendo> sugerirAtuendos() {
-      ServicioClimatico servicioClimatico = ServicioClimatico.getApiClima();
-      List<Map<String, Object>> climaBsAs = servicioClimatico.condicionesClimaticasBsAs();
-      Integer temperatura = climaBsAs.get(0).get("Temperature");
-      return atuendosAdecuadosPorTemperatura(temperatura);
-    }
-
-    public atuendosAdecuadosPorTemperatura(Temperatura temperatura) {
-    	return atuendos.stream().filter(atuendo -> atuendo.getTemperaturaAdecuada().esValida(temperatura));
-    }
-}
-
 public class Temperatura {
   Integer temperaturaMaxima;
   Integer temperaturaMinima;

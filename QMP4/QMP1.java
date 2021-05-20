@@ -5,11 +5,6 @@ public enum Categoria{
 
 public class Atuendo{
     private List<Prenda> prendasValidas;
-    private Temperatura temperaturaAdecuada;
-
-    public Temperatura getTemperaturaAdecuada() {
-        return temperaturaAdecuada;
-    }
 }
 
 public enum Material {
@@ -24,22 +19,36 @@ public class TipoPrenda {
     public static TipoPrenda PANTALON = new TipoPrenda(PARTE_INFERIOR);
 
     Categoria categoria;
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
 }
 
 
 public class Prenda{
-    private TipoPrenda tipo;
+    private TipoPrenda tipoPrenda;
     private Material material;
     private Color color;
     private Color colorSecundario; 
     private Trama trama;
+    private Temperatura temperatura;
 
-   public Prenda(String material, Color color, TipoPrenda tipo, Color colorSecundario, Trama trama){
-        this.tipo = tipo;
+   public Prenda(String material, Color color, TipoPrenda tipoPrenda, Color colorSecundario, Trama trama, Temperatura temperatura){
+        this.tipoPrenda = tipoPrenda;
         this.material = material;
         this.color = color;
         this.trama = trama;
         this.colorSecundario = colorSecundario;
+        this.temperatura = temperatura;
+
+    public TipoPrenda getTipoPrenda() {
+        return tipoPrenda;
+    }
+
+    public Temperatura getTemperatura() {
+        return temperatura;
+    }
 }
 
 public class Color {
@@ -58,25 +67,3 @@ public class Color {
         this.nivelVerde = nivelVerde;
     }
 }
-
-/*
-public class Usuario{
-    List<Prenda> prendas;
-
-    public void cargarPrenda(Prenda prenda){
-        if (validar(prenda)) {
-            prendas.add(prenda);
-        } else {
-            throw new Error("La prenda no cumple con los requerimientos");
-        }
-    }
-
-    public boolean validar(Prenda prenda) {
-        //validaciones
-    }
-
-    public void generarAtuendo(List<Prenda> listaPrendas) {
-        return new Atuendo(listaPrendas);
-    }
-}
-*/
